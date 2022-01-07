@@ -1,4 +1,4 @@
-package com.example.SprinkDrinks;
+package com.example.SpringDrinks;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
