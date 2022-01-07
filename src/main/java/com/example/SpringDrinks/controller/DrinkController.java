@@ -40,13 +40,13 @@ public class DrinkController {
 	}
 	
 	//Read By ID
-	@GetMapping("/ReadById/(id)")
+	@GetMapping("/ReadById/{id}")
 	public ResponseEntity<Drink>readDrinkById(@PathVariable long id){
 		return new ResponseEntity<Drink>(this.service.getById(id), HttpStatus.OK);
 	}
 	
 	//Update
-	@PutMapping("/update/(id)")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<Drink>UpdateDrink(@PathVariable long id, @RequestBody Drink drink){
 		return new ResponseEntity<Drink>(this.service.update(id, drink), HttpStatus.ACCEPTED);
 	}

@@ -1,0 +1,1 @@
+INSERT INTO drink(alcoholpercentage, name, quantity, taste, type)VALUES('40%', 'Chivas Regal', 35, 'Sweet and Spicy', 'Blended Scotch');

@@ -8,10 +8,15 @@ import com.example.SpringDrinks.domain.Drink;
 import com.example.SpringDrinks.repo.DrinkRepo;
 
 @Service
-public class DrinkService implements ServiceMethods<Drink>{
+public class DrinkService implements ServiceMethods<Drink> {
 
 	private DrinkRepo repo;
-	
+
+	public DrinkService(DrinkRepo repo) {
+		super();
+		this.repo = repo;
+	}
+
 	@Override
 	public Drink create(Drink drink) {
 		return this.repo.save(drink);
@@ -25,30 +30,30 @@ public class DrinkService implements ServiceMethods<Drink>{
 	@Override
 	public Drink getById(long id) {
 		Optional<Drink> optionalDrink = this.repo.findById(id);
-		if(optionalDrink.isPresent()) {
-		return optionalDrink.get();
-	}
+		if (optionalDrink.isPresent()) {
+			return optionalDrink.get();
+		}
 		return null;
 	}
-	
+
 	@Override
 	public Drink update(long id, Drink drink) {
-		
+
 		Optional<Drink> existingDrink = this.repo.findById(id);
-		if(existingDrink.isPresent()) {
+		if (existingDrink.isPresent()) {
 			Drink existing = existingDrink.get();
 			existing.setType(drink.getType());
 			existing.setName(drink.getName());
 			existing.setAlcoholpercentage(drink.getAlcoholpercentage());
-			
+
 			return this.repo.saveAndFlush(existing);
-	}
+		}
 		return null;
 	}
 
 	@Override
 	public boolean delete(long id) {
-		
+
 		this.repo.deleteById(id);
 		return this.repo.existsById(id);
 	}
