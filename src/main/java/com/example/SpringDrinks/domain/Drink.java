@@ -108,24 +108,60 @@ public class Drink {
 		this.quantity = quantity;
 	}
 
-	// HashCodes and Equals
+	
+	@Override
+	public String toString() {
+		return "Drink [id=" + id + ", name=" + name + ", type=" + type + ", alcoholpercentage=" + alcoholpercentage
+				+ ", taste=" + taste + ", quantity=" + quantity + "]";
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(alcoholpercentage, id, name, quantity, taste, type);
+		return Objects.hash(alcoholpercentage, name, quantity, taste, type);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Drink other = (Drink) obj;
-		return Objects.equals(alcoholpercentage, other.alcoholpercentage) && id == other.id
-				&& Objects.equals(name, other.name) && quantity == other.quantity && Objects.equals(taste, other.taste)
-				&& Objects.equals(type, other.type);
+		return Objects.equals(alcoholpercentage, other.alcoholpercentage) && Objects.equals(name, other.name)
+				&& quantity == other.quantity && Objects.equals(taste, other.taste) && Objects.equals(type, other.type);
 	}
+	
+	
 
-}
+//	@Override
+//	public int hashCode() {
+//		final int prime = 70;
+//		int result = 71;
+//		result = prime * result + (int) (quantity ^ (quantity >>> 72));
+//		result = prime * result + ((type == null) ? 0 : type.hashCode());
+//		result = prime * result + ((name == null) ? 0 : name.hashCode());
+//		result = prime * result + ((taste == null) ? 0 : taste.hashCode());
+//		result = prime * result + ((alcoholpercentage == null) ? 0 : alcoholpercentage.hashCode());
+//		return result;
+//
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Drink other = (Drink) obj;
+//		return Objects.equals(alcoholpercentage, other.alcoholpercentage) && Objects.equals(name, other.name)
+//				&& quantity == other.quantity && Objects.equals(taste, other.taste) && Objects.equals(type, other.type);
+//	}
+//
+	}
