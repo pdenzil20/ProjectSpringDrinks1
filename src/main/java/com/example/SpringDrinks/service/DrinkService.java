@@ -45,6 +45,8 @@ public class DrinkService implements ServiceMethods<Drink> {
 			existing.setType(drink.getType());
 			existing.setName(drink.getName());
 			existing.setAlcoholpercentage(drink.getAlcoholpercentage());
+			existing.setTaste(drink.getTaste());
+			existing.setQuantity(drink.getQuantity());
 
 			return this.repo.saveAndFlush(existing);
 		}
