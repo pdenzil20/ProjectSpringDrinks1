@@ -1,3 +1,4 @@
+drop table if exists drink cascade;
 CREATE TABLE `drink` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `alcoholpercentage` varchar(255) NOT NULL,

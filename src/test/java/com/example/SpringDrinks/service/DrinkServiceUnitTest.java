@@ -38,4 +38,18 @@ public class DrinkServiceUnitTest {
 		
 		
 	}
+	
+//@Test
+//	
+//	public void getAllTest() {
+//		Drink input = new Drink("Glenllivet 15yr", "Single Malt", "43%","Rich & Smooth", 70);
+//		Drink output = new Drink(1L,"Glenllivet 15yr", "Single Malt", "43%","Rich & Smooth", 70);
+//		
+//	Mockito.when(this.repo.save(input)).thenReturn(output);
+//	assertEquals(output, this.service.getAll(input));
+//	
+//	Mockito.verify(this.repo, Mockito.times(1)).save(input);
+//		
+//		
+//	}
 }
